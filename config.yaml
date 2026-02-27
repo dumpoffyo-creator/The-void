@@ -1,0 +1,36 @@
+# Object Detection System Configuration
+
+# Model Architecture
+model:
+  backbone: "mobilenetv2"  # Options: mobilenetv2, resnet50, efficientnet
+  input_shape: [416, 416, 3]
+  num_classes: 80  # COCO dataset classes
+  max_boxes: 100
+
+# Training Configuration
+training:
+  epochs: 100
+  batch_size: 32
+  learning_rate: 0.001
+  validation_split: 0.2
+  augmentation: true
+  early_stopping_patience: 10
+
+# Data Configuration
+data:
+  train_path: "data/train"
+  val_path: "data/val"
+  test_path: "data/test"
+  annotations_format: "pascal_voc"  # Options: pascal_voc, coco, yolo
+  
+# Inference Configuration
+inference:
+  confidence_threshold: 0.5
+  iou_threshold: 0.4
+  max_detections: 100
+
+# Output Configuration
+output:
+  model_dir: "models"
+  results_dir: "outputs"
+  log_dir: "outputs/logs"
