@@ -184,3 +184,5 @@ train_gen = dataset.get_data_generator(batch_size=32, shuffle=True)
 - Pillow
 - Matplotlib
 - scikit-learn
+## Licences
+-MIT
